@@ -12,7 +12,7 @@ gap: 10px;
 header{
     background-color: aqua;
     grid-area: 1/1/2/10;
-text-transform: uppercase;
+    text-transform: uppercase;
 }
 
 nav{
