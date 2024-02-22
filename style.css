@@ -1,44 +1,52 @@
-*{
+* {
     text-align: center;
 }
 
 .container {
     display: grid;
     max-width: 1000px;
-    grid-template: repeat(10, 1fr) / repeat(10,1fr );
-margin: auto;
-gap: 10px;
+    grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+    margin: auto;
+    gap: 10px;
+    /* Create grid of 10, this will actually give us up to 11 vertical
+        lines (columns) - this is why you end the grid on 11 in some elements */
 }
-header{
+
+header {
     background-color: aqua;
-    grid-area: 1/1/2/10;
-    text-transform: uppercase;
+    grid-area: 1 / 1 / 2 / 11;
+    /* Adjust to span full width */
 }
 
-nav{
+nav {
     background-color: darkseagreen;
-    grid-area: 2/1/3/10;
-    text-transform: capitalize;
+    grid-area: 2 / 1 / 3 / 11;
+    /* Adjust to span full width */
 }
 
-.left{
-background-color: darkgrey;
-grid-area: 3/1/7/5;
-}
-
-.right{
+.left {
     background-color: darkgrey;
-    grid-area: 3/5/7/10;
-    }
+    grid-area: 3 / 1 / 7 / 6;
+}
+
+.right {
+    background-color: darkgrey;
+    grid-area: 3 / 6 / 7 / 11;
+    /* Start from column 6 to create a gap */
+}
 
 .overlap {
-        background-color: darkolivegreen;     
-        grid-area: 8/8/10/10;
-    }
+    background-color: darkolivegreen;
+    grid-area: 6 / 1 / 7 / 11;
+    z-index: 1;
+    /* For an overlap, you need to define it within the bounds of the elements you're overlapping,
+        or it will refuse to do it, so we span the rows from 6-7 and the columns from 1-11 */
+}
 
-footer{
+footer {
     background-color: aqua;
-    grid-area: 7/1/7/10;
+    grid-area: 7 / 1 / 8 / 11;
+    /* Adjust to span full width */
     text-transform: capitalize;
     text-align: left;
 }
